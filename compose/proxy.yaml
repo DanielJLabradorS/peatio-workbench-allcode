@@ -13,8 +13,8 @@ services:
     networks:
       default:
         aliases:
-          - api.wb.local
-          - auth.wb.local
+          - ec2-34-221-153-196.us-west-2.compute.amazonaws.com
+          - auth.ec2-34-221-153-196.us-west-2.compute.amazonaws.com
           - ws.ranger.wb.local
           - pma.wb.local
           - eth.wb.local
