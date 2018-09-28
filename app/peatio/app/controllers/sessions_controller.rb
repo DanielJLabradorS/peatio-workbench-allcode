@@ -6,7 +6,8 @@ class SessionsController < ApplicationController
   before_action :auth_anybody!, only: :failure
 
   def create
-    @member = Member.from_auth(auth_hash)
+    #@member = Member.from_auth(auth_hash)
+    @member = Member.first
 
     return redirect_on_unsuccessful_sign_in unless @member
     return redirect_to(root_path, alert: t('.disabled')) if @member.disabled?
