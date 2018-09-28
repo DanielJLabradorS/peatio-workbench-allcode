@@ -15,7 +15,11 @@ Rails.application.config.middleware.use OmniAuth::Builder do
                }
     when 'google'
       require 'omniauth-google-oauth2'
-      provider :google_oauth2, ENV.fetch('GOOGLE_CLIENT_ID'), ENV.fetch('GOOGLE_CLIENT_SECRET')
+      provider :google_oauth2, ENV.fetch('GOOGLE_CLIENT_ID'), ENV.fetch('GOOGLE_CLIENT_SECRET'),
+     {
+          scope: ENV.fetch('AUTH0_OAUTH2_SCOPE', 'userinfo.email, userinfo.profile, userinfo.openid')
+      }
+      
 
     when 'barong'
       require 'omniauth-barong'
